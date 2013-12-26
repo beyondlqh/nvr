@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration>
+	<property>
+		<name>fs.default.name</name>
+		<value>hdfs://192.168.115.224:8020</value>
+	</property>
+	<property>
+		<name>index.interval</name>
+		<value>60000</value>
+	</property>
+	<property>
+		<name>video.store.interval</name>
+		<value>3600000</value>
+	</property>
+	<property>
+		<name>videoserver.url</name>
+		<value>hdfs://192.168.115.224/video</value>
+	</property>
+	<property>
+		<name>indexfile.url</name>
+		<value>hdfs://192.168.115.224/index</value>
+	</property>
+</configuration>

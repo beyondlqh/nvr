@@ -1,0 +1,403 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.iotsec</groupId>
+	<artifactId>nvr</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>nvr</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>wvefvw</groupId>
+			<artifactId>local</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>D:/java workspace/hadoop-1.0.4/lib/asm-3.2.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>sds</groupId>
+			<artifactId>local</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>D:/java workspace/hadoop-1.0.4/lib/aspectjrt-1.6.5.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>ewvxw</groupId>
+			<artifactId>local</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>D:/java workspace/hadoop-1.0.4/lib/aspectjtools-1.6.5.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>dffex</groupId>
+			<artifactId>local</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>D:/java workspace/hadoop-1.0.4/lib/commons-beanutils-1.7.0.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>ddd</groupId>
+			<artifactId>local</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>D:/java workspace/hadoop-1.0.4/lib/commons-beanutils-core-1.8.0.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>dvfdf</groupId>
+			<artifactId>local</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>D:/java workspace/hadoop-1.0.4/lib/commons-cli-1.2.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>loceveervweal</groupId>
+			<artifactId>local</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>D:/java workspace/hadoop-1.0.4/lib/commons-codec-1.4.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>leocal</groupId>
+			<artifactId>local</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>D:/java workspace/hadoop-1.0.4/lib/commons-collections-3.2.1.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>loevcal</groupId>
+			<artifactId>local</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>D:/java workspace/hadoop-1.0.4/lib/commons-configuration-1.6.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>lockkal</groupId>
+			<artifactId>local</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>D:/java workspace/hadoop-1.0.4/lib/commons-daemon-1.0.1.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>loutyutcal</groupId>
+			<artifactId>local</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>D:/java workspace/hadoop-1.0.4/lib/commons-digester-1.8.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>loctyal</groupId>
+			<artifactId>local</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>D:/java workspace/hadoop-1.0.4/lib/commons-el-1.0.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>lotyntcal</groupId>
+			<artifactId>local</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>D:/java workspace/hadoop-1.0.4/lib/commons-httpclient-3.0.1.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>lorvrvrvcal</groupId>
+			<artifactId>local</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>D:/java workspace/hadoop-1.0.4/lib/commons-io-2.1.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>lotrvrvcal</groupId>
+			<artifactId>local</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>D:/java workspace/hadoop-1.0.4/lib/commons-lang-2.4.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>lotyhthtcal</groupId>
+			<artifactId>local</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>D:/java workspace/hadoop-1.0.4/lib/commons-logging-1.1.1.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>locuytal</groupId>
+			<artifactId>local</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>D:/java workspace/hadoop-1.0.4/lib/commons-logging-api-1.0.4.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>locttal</groupId>
+			<artifactId>local</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>D:/java workspace/hadoop-1.0.4/lib/commons-math-2.1.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>lotuycal</groupId>
+			<artifactId>local</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>D:/java workspace/hadoop-1.0.4/lib/commons-net-1.4.1.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>locynyal</groupId>
+			<artifactId>local</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>D:/java workspace/hadoop-1.0.4/lib/core-3.1.1.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>loldlcal</groupId>
+			<artifactId>local</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>D:/java workspace/hadoop-1.0.4/lib/hadoop-capacity-scheduler-1.0.4.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>lowwefwcal</groupId>
+			<artifactId>local</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>D:/java workspace/hadoop-1.0.4/lib/hadoop-fairscheduler-1.0.4.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>lodbcvcal</groupId>
+			<artifactId>local</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>D:/java workspace/hadoop-1.0.4/lib/hadoop-thriftfs-1.0.4.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>locsfvsfval</groupId>
+			<artifactId>local</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>D:/java workspace/hadoop-1.0.4/lib/hsqldb-1.8.0.10.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>locxcvbxal</groupId>
+			<artifactId>local</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>D:/java workspace/hadoop-1.0.4/lib/jackson-core-asl-1.8.8.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>locsvfsal</groupId>
+			<artifactId>local</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>D:/java workspace/hadoop-1.0.4/lib/jackson-mapper-asl-1.8.8.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>lodvdcal</groupId>
+			<artifactId>locfvfal</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>D:/java workspace/hadoop-1.0.4/lib/jasper-compiler-5.5.12.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>locsfvsfal</groupId>
+			<artifactId>local</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>D:/java workspace/hadoop-1.0.4/lib/jasper-runtime-5.5.12.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>lobsfbscal</groupId>
+			<artifactId>local</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>D:/java workspace/hadoop-1.0.4/lib/jdeb-0.8.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>loclllkkkal</groupId>
+			<artifactId>local</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>D:/java workspace/hadoop-1.0.4/lib/jersey-core-1.8.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>ldfngfocal</groupId>
+			<artifactId>local</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>D:/java workspace/hadoop-1.0.4/lib/jersey-json-1.8.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>locashfgsl</groupId>
+			<artifactId>local</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>D:/java workspace/hadoop-1.0.4/lib/jersey-server-1.8.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>losrhsrhscal</groupId>
+			<artifactId>local</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>D:/java workspace/hadoop-1.0.4/lib/jets3t-0.6.1.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>locfdhdfhgal</groupId>
+			<artifactId>local</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>D:/java workspace/hadoop-1.0.4/lib/jetty-6.1.26.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>locdfghdgal</groupId>
+			<artifactId>local</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>D:/java workspace/hadoop-1.0.4/lib/jetty-util-6.1.26.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>losfvbfbscal</groupId>
+			<artifactId>local</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>D:/java workspace/hadoop-1.0.4/lib/jsch-0.1.42.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>locrbsgssgrsal</groupId>
+			<artifactId>local</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>D:/java workspace/hadoop-1.0.4/lib/junit-4.5.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>loshfsrehscal</groupId>
+			<artifactId>local</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>D:/java workspace/hadoop-1.0.4/lib/kfs-0.2.2.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>locdgfhdgjhdtal</groupId>
+			<artifactId>local</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>D:/java workspace/hadoop-1.0.4/lib/log4j-1.2.15.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>locdtdhjdjdtjhal</groupId>
+			<artifactId>local</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>D:/java workspace/hadoop-1.0.4/lib/mockito-all-1.8.5.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>locfdjydjrtdral</groupId>
+			<artifactId>local</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>D:/java workspace/hadoop-1.0.4/lib/oro-2.0.8.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>locfghjfghkgfal</groupId>
+			<artifactId>local</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>D:/java workspace/hadoop-1.0.4/lib/servlet-api-2.5-20081211.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>logjhkgjhcal</groupId>
+			<artifactId>local</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>D:/java workspace/hadoop-1.0.4/lib/slf4j-api-1.4.3.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>lodgfhdhthcal</groupId>
+			<artifactId>local</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>D:/java workspace/hadoop-1.0.4/lib/slf4j-log4j12-1.4.3.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>lodthdrtrcal</groupId>
+			<artifactId>local</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>D:/java workspace/hadoop-1.0.4/lib/xmlenc-0.52.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>lofhgjfhfcal</groupId>
+			<artifactId>local</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>D:/java workspace/hadoop-1.0.4/hadoop-ant-1.0.4.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>lomgfvhmfghmfcal</groupId>
+			<artifactId>local</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>D:/java workspace/hadoop-1.0.4/hadoop-client-1.0.4.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>locadrthdrtbdgdtrbl</groupId>
+			<artifactId>local</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>D:/java workspace/hadoop-1.0.4/hadoop-core-1.0.4.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>lodhgjdtjdrjcal</groupId>
+			<artifactId>local</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>D:/java workspace/hadoop-1.0.4/hadoop-examples-1.0.4.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>locdghjdfgjdgjdal</groupId>
+			<artifactId>local</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>D:/java workspace/hadoop-1.0.4/hadoop-minicluster-1.0.4.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>lodgjfdgjdtjsd</groupId>
+			<artifactId>l</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>D:/java workspace/hadoop-1.0.4/hadoop-test-1.0.4.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>locdfgdjgdhtrhdal</groupId>
+			<artifactId>local</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>D:/java workspace/hadoop-1.0.4/hadoop-tools-1.0.4.jar</systemPath>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<excludes>
+						<exclude>*.MF</exclude>
+					</excludes>
+					<archive>
+						<manifestFile>src/main/resources/MANIFEST.MF</manifestFile>
+						<manifest>
+							<mainClass>com.iotsec.nvr.store.WriteIntoHadoop</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
