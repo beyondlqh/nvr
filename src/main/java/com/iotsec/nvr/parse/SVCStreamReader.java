@@ -8,7 +8,7 @@ public class SVCStreamReader {
 
 	SVCPacket packet = new SVCPacket();
 
-	byte[] buffer = new byte[165508];
+	byte[] buffer = new byte[1000000];
 
 	int pointer = -1;
 	int packet_end = -1; // excluding packet index

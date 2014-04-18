@@ -18,10 +18,11 @@ import org.apache.hadoop.fs.FSDataOutputStream;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IOUtils;
-import org.apache.hadoop.io.LongWritable;
-import org.apache.hadoop.io.MapFile;
+import org.apache.hadoop.io.SequenceFile;
+import org.apache.hadoop.io.Text;
 
 import com.iotsec.nvr.parse.*;
+import com.iotsec.nvr.security.HE;
 
 public class SocketThread extends Thread {
 
@@ -31,14 +32,14 @@ public class SocketThread extends Thread {
 	private static FileSystem fs;
 
 	private Socket socket;
-	private byte[] buf = new byte[4096];
+	// private byte[] buf = new byte[4096];
 	private FSDataOutputStream out = null;
 	private InputStream in = null;
 	private SVCStreamReader ssr = null;
 	private Timer reportOff = new Timer(true);
-	private LongWritable tsKey = new LongWritable();
-	private LongWritable indexValue = new LongWritable();
-	private MapFile.Writer indexOut = null;
+	private Text tsKey = new Text();
+	private Text indexValue = new Text();
+	private SequenceFile.Writer indexOut = null;
 	private Object outFileSynchronized = new Object();
 
 	SocketThread(Socket socket) throws IOException {
@@ -55,37 +56,43 @@ public class SocketThread extends Thread {
 		Date date = new Date();
 		calendar.setTime(date);
 		// 系统运行时一天存一次
-		/*
-		 * calendar.add(Calendar.DAY_OF_MONTH, 1);
-		 * calendar.set(Calendar.HOUR_OF_DAY, 0); calendar.set(Calendar.MINUTE,
-		 * 0); calendar.set(Calendar.SECOND, 0);
-		 * calendar.set(Calendar.MILLISECOND, 0);
-		 */
+		calendar.add(Calendar.DAY_OF_MONTH, 1);
+		calendar.set(Calendar.HOUR_OF_DAY, 0);
+		calendar.set(Calendar.MINUTE, 0);
+		calendar.set(Calendar.SECOND, 0);
+		calendar.set(Calendar.MILLISECOND, 0);
+
 		// 调试阶段
-		calendar.add(Calendar.MINUTE,
-				+(int) (conf.getLong("video.store.interval", 5184000) / 60000));
+
+		/*
+		 * calendar.add(Calendar.MINUTE, +(int)
+		 * (conf.getLong("video.store.interval", 5184000) / 60000));
+		 */
 		return calendar.getTime();
 	}
 
 	public void updateOutPutStream() {
 		try {
+
 			String remoteAddress = socket.getRemoteSocketAddress().toString()
-					.replace(":", ".")
-					+ "_";
-			String date = new SimpleDateFormat("yyyyMMddhhmm")
-					.format(new Date());
+					.replace(':', '_');
+			/*
+			 * String date = new SimpleDateFormat("yyyyMMddhhmm") .format(new
+			 * Date());
+			 */
+
 			/*
 			 * int portIndex = socket.getRemoteSocketAddress().toString()
 			 * .indexOf(":"); String remoteAddress =
 			 * socket.getRemoteSocketAddress().toString() .substring(0,
-			 * portIndex); String date = new
-			 * SimpleDateFormat("yyyyMMdd").format(new Date());
+			 * portIndex);
 			 */
+			String date = new SimpleDateFormat("yyyyMMdd").format(new Date());
 
 			String videoFilePathString = conf.get("videoserver.url")
-					+ remoteAddress + date + ".264";
+					+ remoteAddress + "_" + date + ".264";
 			String indexFilePathString = conf.get("indexfile.url")
-					+ remoteAddress + date + ".map";
+					+ remoteAddress + "_" + date;
 			Path videoFilePath = new Path(videoFilePathString);
 			Path indexFilePath = new Path(indexFilePathString);
 
@@ -101,8 +108,8 @@ public class SocketThread extends Thread {
 					out = fs.create(videoFilePath, false);
 				}
 				if (fs.exists(indexFilePath))
-					indexOut = new MapFile.Writer(conf, fs,
-							indexFilePathString, tsKey.getClass(),
+					indexOut = SequenceFile.createWriter(fs, conf,
+							indexFilePath, tsKey.getClass(),
 							indexValue.getClass());
 				else {
 					if (indexOut != null) {
@@ -110,8 +117,8 @@ public class SocketThread extends Thread {
 						indexOut = null;
 						IOUtils.closeStream(indexOut);
 					}
-					indexOut = new MapFile.Writer(conf, fs,
-							indexFilePathString, tsKey.getClass(),
+					indexOut = SequenceFile.createWriter(fs, conf,
+							indexFilePath, tsKey.getClass(),
 							indexValue.getClass());
 				}
 			}
@@ -123,8 +130,8 @@ public class SocketThread extends Thread {
 	public void run() {
 		try {
 			in = new BufferedInputStream(socket.getInputStream());
-			int bytesRead = in.read(buf, 0, buf.length);
-			if (bytesRead >= 0) {
+			// int bytesRead = in.read(buf, 0, buf.length);
+			if (in.read() >= 0) {
 				updateOutPutStream();
 				reportOff.schedule(new TimerTask() {
 					@Override
@@ -139,14 +146,19 @@ public class SocketThread extends Thread {
 			ssr = new SVCStreamReader(in);
 			while (!ssr.isFinished) {
 				SVCPacket packet = ssr.readPacket();
-				if (packet.nal_type == 5) {
-					packet.print();
-					tsKey.set(System.currentTimeMillis());
+				if (packet.nal_type == 0) {
+
 					synchronized (outFileSynchronized) {
-						indexValue.set(out.getPos());
+
+						tsKey.set(HE.getInstance().en(packet.raw, 5, 6));
+
+						indexValue.set(HE.getInstance().en(out.getPos()));
+
 						indexOut.append(tsKey, indexValue);
-						System.out.println(tsKey + " " + indexValue);
-						out.write(packet.raw, 0, packet.raw.length);
+
+						System.out.println(tsKey);
+						System.out.println(indexValue);
+
 					}
 				} else {
 					synchronized (outFileSynchronized) {

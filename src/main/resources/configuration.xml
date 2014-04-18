@@ -6,12 +6,8 @@
 		<value>hdfs://192.168.115.224:8020</value>
 	</property>
 	<property>
-		<name>index.interval</name>
-		<value>60000</value>
-	</property>
-	<property>
 		<name>video.store.interval</name>
-		<value>3600000</value>
+		<value>86400000</value>
 	</property>
 	<property>
 		<name>videoserver.url</name>
